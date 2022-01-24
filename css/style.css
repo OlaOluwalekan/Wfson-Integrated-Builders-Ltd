@@ -1,0 +1,183 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Site Blue Colours */
+  --mainBlue: #3949AB;
+  --darkMainBlue: #1A237E;
+  --lightMainBlue: #E8EAF619;
+  
+  /* Site Pink Colours */
+  --mainPink: #AB47BC;
+  
+  /* Site Cream Colours */
+  --mainCream: #FFD54F;
+}
+
+/* Sidebar Styles*/
+.side-bar {
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  left: -200px;
+  transition: all 0.5s ease;
+}
+
+.main-side-bar {
+  background: var(--mainBlue);
+  width: 200px;
+}
+
+.side-bar-header {
+  background: var(--mainPink);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-bar-body li {
+  display: flex;
+  /*align-items: center;*/
+}
+
+.side-bar-body a {
+  text-decoration: none;
+  display: block;
+  line-height: 50px;
+  padding-left: 20px;
+  width: 100%;
+  border-bottom: var(--darkMainBlue) solid 1px;
+  border-top: var(--lightMainBlue) solid 1px;
+  font-weight: 900;
+  color: var(--mainCream);
+}
+
+.side-bar-body a:hover {
+  background: var(--mainCream);
+  color: var(--mainBlue);
+  padding-left: 30px;
+}
+
+.menu-icon {
+  margin-right: 20px;
+}
+
+.side-drawer {
+  background: red;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+label #side-bar-opener, label #side-bar-closer {
+  background: var(--mainPink);
+  font-size: 50px;
+  color: var(--mainCream);
+  padding: 5px 10px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+  position: absolute;
+}
+
+label #side-bar-opener {
+  /*visibility: hidden;*/
+  z-index: 5;
+  transition: all 0.5s ease;
+}
+
+label #side-bar-closer {
+  color: var(--mainCream);
+  width: 50px;
+  height: 50px;
+  /*top: 0;*/
+  Left: -120px;
+  z-index: 50;
+  transition: all 0.5s ease;
+}
+
+.drawer-bar {
+  width: 20px;
+  height: 2px;
+  background: var(--mainCream);
+  margin: 3px 0;
+}
+
+#check {
+  display: none;
+}
+
+#check:checked ~ .side-bar {
+  left: 0;
+}
+
+#check:checked ~ label #side-bar-opener {
+  opacity: 0;
+}
+
+#check:checked ~ label #side-bar-closer {
+  left: 200px;
+}
+
+#check:checked ~ .side-bar .main-side-bar .socials #so-facebook {
+  bottom: 300px;
+}
+
+#check:checked~.side-bar .main-side-bar .socials #so-twitter {
+  bottom: 300px;
+}
+
+#check:checked~.side-bar .main-side-bar .socials #so-instagram {
+  bottom: 300px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 350px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.social-icon {
+  color: white;
+  margin: 0 10px;
+  font-size: 30px;
+  position: absolute;
+  bottom: 10px;
+  transition: bottom 0.8s ease;
+}
+
+#so-facebook {
+  position: absolute;
+  left: 5px;
+  transition-delay: 0.2s;
+}
+
+#so-twitter {
+  position: absolute;
+  left: 75px;
+  transition-delay: 0.3s;
+}
+
+#so-instagram {
+  position: absolute;
+  right: 5px;
+  transition-delay: 0.4s;
+}
+
+.social-icon:hover {
+  transform: scale(1.5);
+}
+
+/* End of Sidebar Styles*/

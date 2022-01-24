@@ -8,12 +8,57 @@
   
   <!-- CSS Style -->
   <link rel="stylesheet" href="./css/style.css">
+  
+  <!-- Font Awesome Icons -->
+  <script src="/Script/all.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
+  <!-- Side Bar -->
+  
+  <!-- Side bar drawer to open and close main side bar -->
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="side-bar-opener"></i>
+    <i class="fas fa-times" id="side-bar-closer"></i>
+  </label>
+  <!-- End of Side bar drawer -->
+  
+  <div class="side-bar">
+    <!-- The main side bar containing the menu items -->
+    <div class="main-side-bar">
+      <div class="side-bar-header">
+        <h2>WFSON</h2>
+      </div>
+      
+      <div class="side-bar-body">
+        <ul>
+          <li><a href="#"><i class="fas fa-home menu-icon"></i>Home</a></li>
+          <li><a href="#"><i class="fas fa-info-circle menu-icon"></i>About</a></li>
+          <li><a href="#"><i class="fas fa-project-diagram menu-icon"></i>Project</a></li>
+          <li><a href="#"><i class="fas fa-award menu-icon"></i>Testimonials</a></li>
+          <li><a href="#"><i class="fas fa-phone menu-icon"></i>Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook social-icon" id="so-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter social-icon" id="so-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram social-icon" id="so-instagram"></i></a>
+        <!--<a href="#"><i class="fab fa-telegram social-icon" id="so-telegram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp social-icon" id="so-whatsapp"></i></a>-->
+      </div>
+      <!-- End of Social Links -->
+      
+    </div>
+    <!-- End of main side bar -->
+    
+  </div>
+  <!-- End of Side Bar -->
 
   <!-- JavaScript -->
-  <script src="./script/main.js"></script>
+  <script src="./Script/main.js"></script>
 </body>
 
 </html>
