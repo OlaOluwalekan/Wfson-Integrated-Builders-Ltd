@@ -1,10 +1,8 @@
-/*window.addEventListener('scroll', () => {
-  let content = document.querySelector('.socials');
-  let contentPosition = content.getBoundingClientRect().width;
-  let screenPosition = window.innerWidth;
-  if(contentPosition < screenPosition) {
-    content.classList.add('active');
-  } else {
-    content.classList.remove('active');
+var counter = 1;
+setInterval(function() {
+  document.getElementById('radio' +counter).checked = true;
+  counter++;
+  if(counter > 4) {
+    counter = 1;
   }
-})*/
+}, 2000)

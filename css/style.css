@@ -12,6 +12,8 @@
   
   /* Site Pink Colours */
   --mainPink: #AB47BC;
+  --darkMainPink: #6A1B9A;
+  --lightMainPink: #F3E5F519;
   
   /* Site Cream Colours */
   --mainCream: #FFD54F;
@@ -25,6 +27,7 @@
   position: fixed;
   left: -200px;
   transition: all 0.5s ease;
+  z-index: 2;
 }
 
 .main-side-bar {
@@ -36,6 +39,7 @@
   background: var(--mainPink);
   height: 50px;
   display: flex;
+  border-right: solid 1.5px var(--darkMainPink);
   justify-content: center;
   align-items: center;
 }
@@ -67,18 +71,6 @@
   margin-right: 20px;
 }
 
-.side-drawer {
-  background: red;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 20%;
-  border-bottom-right-radius: 20%;
-}
-
 label #side-bar-opener, label #side-bar-closer {
   background: var(--mainPink);
   font-size: 50px;
@@ -90,16 +82,14 @@ label #side-bar-opener, label #side-bar-closer {
 }
 
 label #side-bar-opener {
-  /*visibility: hidden;*/
   z-index: 5;
   transition: all 0.5s ease;
 }
 
 label #side-bar-closer {
-  color: var(--mainCream);
   width: 50px;
   height: 50px;
-  /*top: 0;*/
+  border-left: solid 2px var(--lightMainPink);
   Left: -120px;
   z-index: 50;
   transition: all 0.5s ease;
@@ -181,3 +171,192 @@ label #side-bar-closer {
 }
 
 /* End of Sidebar Styles*/
+
+/* Sidebar Destop Version */
+@media screen and (min-width: 361px) {
+  .side-bar {
+    width: 600px;
+    height: 100vh;
+    left: -600px;
+  }
+  
+  .main-side-bar {
+    width: 600px;
+  }
+  
+  label #side-bar-closer {
+    width: 50px;
+    height: 50px;
+    Left: -120px;
+  }
+  
+  #check:checked~label #side-bar-closer {
+    left: 600px;
+  }
+  
+  .side-bar-body a {
+    line-height: 100px;
+    padding-left: 50px;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  
+  .side-bar-body a:hover {
+    padding-left: 100px;
+  }
+  
+  .socials {
+    height: 1000px;
+    padding-bottom: 10px;
+  }
+  
+  .social-icon {
+    font-size: 50px;
+  }
+  
+  #so-facebook {
+    position: absolute;
+    left: 50px;
+    transition-delay: 0.2s;
+  }
+  
+  #so-twitter {
+    position: absolute;
+    left: 45%;
+    transition-delay: 0.3s;
+  }
+  
+  #so-instagram {
+    position: absolute;
+    right: 50px;
+    transition-delay: 0.4s;
+  }
+  
+  #check:checked~.side-bar .main-side-bar .socials #so-facebook {
+    bottom: 800px;
+  }
+  
+  #check:checked~.side-bar .main-side-bar .socials #so-twitter {
+    bottom: 800px;
+  }
+  
+  #check:checked~.side-bar .main-side-bar .socials #so-instagram {
+    bottom: 800px;
+  }
+}
+
+/* End of Sidebar Desktop Version */
+
+/* Slider styles */
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: turquoise;
+}
+
+.slider {
+  width: 360px;
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 270px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 360px;
+  height: 270px;
+}
+
+.nav-manual {
+  position: absolute;
+  width: 360px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+ border: 2px solid turquoise;
+ padding: 5px;
+ border-radius: 10px;
+ cursor: pointer;
+ transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 20px;
+}
+
+.manual-btn:hover {
+  background: turquoise;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~.first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~.first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~.first {
+  margin-left: -60%;
+}
+
+/* Automatic Navigation */
+
+.nav-auto {
+  position: absolute;
+  display: flex;
+  width: 360px;
+  justify-content: center;
+  margin-top: 230px;
+}
+
+.nav-auto div {
+  border: 2px solid turquoise;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.nav-auto div:not(:last-child) {
+  margin-right: 20px;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1 {
+  background: turquoise;
+}
+
+#radio2:checked~.nav-auto .auto-btn2 {
+  background: turquoise;
+}
+
+#radio3:checked~.nav-auto .auto-btn3 {
+  background: turquoise;
+}
+
+#radio4:checked~.nav-auto .auto-btn4 {
+  background: turquoise;
+}
